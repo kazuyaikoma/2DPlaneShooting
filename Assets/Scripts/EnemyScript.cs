@@ -42,6 +42,7 @@ public class EnemyScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            gameController.GameOver();
             Instantiate(explosion, transform.position, transform.rotation);
             Instantiate(explosion, collision.transform.position, collision.transform.rotation);
             Destroy(collision.gameObject);

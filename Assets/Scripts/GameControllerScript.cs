@@ -7,6 +7,7 @@ public class GameControllerScript : MonoBehaviour
 {
     private int score;
     public Text scoreText;
+    public Text replayText;
     public GameObject enemy;
 
 
@@ -30,6 +31,7 @@ public class GameControllerScript : MonoBehaviour
         StartCoroutine("SpawnEnemy");
         score = 0;
         UpdateScoreText();
+        replayText.text = "";
     }
 
     // Update is called once per frame
@@ -47,5 +49,10 @@ public class GameControllerScript : MonoBehaviour
     private void UpdateScoreText()
     {
         scoreText.text = "Score: " + score;
+    }
+
+    public void GameOver()
+    {
+        replayText.text = "Hit SPACE to replay!";
     }
 }
